@@ -23,8 +23,8 @@ spec:
           # Esegui curl per ottenere il tag dall'URL del Docker Hub
           TAG=$(curl -s "https://registry.hub.docker.com/v2/repositories/saratullini01/hello_world/tags" | jq -r '.results[0].name')
           # Sostituisci "latest" con il tag ottenuto
-          sed -i "s/:tag/:$TAG/" ./helloworld-deployment.yaml
+          sed -i "s/:$tag/:$TAG/" ./helloworld-deployment.yaml
           exec "$@"
-        image: saratullini01/hello_world:tag
+        image: saratullini01/hello_world:$tag
         ports:
         - containerPort: 5000
