@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: saratullini01/hello_world:3.0
+        image: saratullini01/hello_world:2.0
         ports:
         - containerPort: 5000
